@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'http'
 require 'uri'
+require './pdf_generator'
 
 API_ENDPOINT = 'https://api.github.com'
 
@@ -14,4 +15,10 @@ get '/search' do
   @top_contributors = response.parse[0..2].map { |contributor| contributor['login'] }
 
   erb :index
+end
+
+get '/download/:number/:username' do |number, username|
+  content_type 'application/pdf'
+  pdf = PdfGenerator.new(username, number)
+  pdf.render
 end
