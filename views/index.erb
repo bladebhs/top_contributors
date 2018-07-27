@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Top Contributors</title>
+  <meta name="description" content="Top Contributors">
+  <meta name="author" content="Vladislav Isakov">
+</head>
+
+<body>
+  <form action="search">
+    <input name="repo_url" type="text" placeholder="Введите ссылку на репозиторий"></input>
+    <button type="submit">Search</button>
+  </form>
+
+  <% if @top_contributors %>
+    <h2>Results</h2>
+    <table>
+      <% @top_contributors.each_with_index do |contributor, index| %>
+        <tr><td><%= contributor %></td><td><a href="/download/<%= index+1 %>/<%= c %>">download pdf</a></td></tr>
+      <% end %>
+    </table>
+  <% end %>
+</body>
+</html>
