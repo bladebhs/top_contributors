@@ -12,4 +12,5 @@ group :test do
   gem 'pdf-inspector', require: "pdf/inspector"
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'rake'
 end
