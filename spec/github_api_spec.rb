@@ -8,9 +8,10 @@ describe GithubApi do
     it "returns non-empty array without errors" do
       contributors, error = GithubApi::top_contributors(valid_repo)
       # even if the repo is valid, Github may be unavailable and return an error
-      unless error  
-        expect(contributors).not_to be_empty 
-        expect(error).to be_nil
+      if error
+        expect(contributors).to be_empty
+      else  
+        expect(contributors).not_to be_empty
       end
     end
   end
