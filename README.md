@@ -1,0 +1,1 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/1f7c24e3c35b90ec4427/maintainability)](https://codeclimate.com/github/bladebhs/top_contributors/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/1f7c24e3c35b90ec4427/test_coverage)](https://codeclimate.com/github/bladebhs/top_contributors/test_coverage)
