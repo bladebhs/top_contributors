@@ -5,8 +5,14 @@ rvm:
   - 2.5.0
 
 env:
+  - MOZ_HEADLESS=1
   global:
     - CC_TEST_REPORTER_ID=$CCKEY
+
+addons:
+  firefox: latest
+  apt_packages:
+    libmagic-dev
 
 before_install: 
   gem install bundler
@@ -24,10 +30,6 @@ scripts:
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-
-addons:
-  apt_packages:
-    libmagic-dev
 
 deploy:
   provider: heroku
