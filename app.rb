@@ -1,5 +1,6 @@
 require 'sinatra'
 require './services/pdf_generator'
+require './services/zip_generator'
 require './services/github_api'
 
 get '/' do
@@ -20,4 +21,7 @@ end
 
 get '/download_zip' do
   content_type 'application/zip'
+  data = ZipGenerator.new(['bladebhs', 'matz', 'yorick']).data
+  attachment('diplomas.zip')
+  response.write(data)
 end

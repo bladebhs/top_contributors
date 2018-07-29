@@ -69,6 +69,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
+    ruby-filemagic (0.7.2)
     ruby-rc4 (0.1.5)
     rubyzip (1.2.1)
     selenium-webdriver (3.13.1)
@@ -107,6 +108,7 @@ DEPENDENCIES
   rack-test
   rake
   rspec
+  ruby-filemagic
   selenium-webdriver
   simplecov
   simplecov-console
