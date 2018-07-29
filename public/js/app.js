@@ -1,17 +1,12 @@
-//var $loading = $('#loading').hide();
 $(document)
   .ajaxStart(function () {
-    //$loading.show();
-    console.log("ajax started");
     $("#search").html('<i class="fa fa-spinner fa-lg fa-spin"></i>');
   })
   .ajaxStop(function () {
-    //$loading.hide();
     $("#search").html("Search");
   });
 
 $(document).ready(function() {
-
   $("#search").attr("disabled", "disabled");
 
   $("#repo_url").on("keyup", function() {
@@ -38,5 +33,4 @@ $(document).ready(function() {
       }
     });
   });
-
 });

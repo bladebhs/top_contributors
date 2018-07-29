@@ -5,12 +5,10 @@ rvm:
   - 2.5.0
 
 env:
-  - MOZ_HEADLESS=1
   global:
     - CC_TEST_REPORTER_ID=$CCKEY
 
 addons:
-  firefox: latest
   apt_packages:
     libmagic-dev
 
