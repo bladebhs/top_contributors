@@ -1,1 +1,71 @@
-.error { color: red; display: block; }
+@import "http://fonts.fontstorage.com/import/opensans.css";
+
+body { 
+  padding: 0; 
+  margin: 0; 
+  height: 100%;
+  font-family: "Open Sans";
+  font-size: 16px;
+}
+
+.title {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: #226ce0;
+}
+
+a:hover {
+  color: #133c7f;
+}
+
+.error {  
+  display: block;
+  color: red;
+  padding-top: 1rem;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+table td {
+  font-size: 1rem;
+  line-height: 1.8rem;
+}
+
+input[type=text] {
+  width: 70%;
+  padding: 8px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+input[type=submit] {
+  background-color: #62ab37;
+  border: none;
+  color: #fff;
+  padding: 12px 40px;
+  text-decoration: none;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input[type=submit]:hover {
+  background-color: #518c2e;
+}

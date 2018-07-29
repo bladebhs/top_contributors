@@ -8,23 +8,30 @@
 </head>
 
 <body>
-  <form action="search">
-    <input name="repo_url" type="text" placeholder="Введите ссылку на репозиторий"></input>
-    <button type="submit">Search</button>
-    <% if @error %>
-      <span class="error"><%= @error %></span>
-    <% end %>
-  </form>
-
-  <% if !@error && @top_contributors %>
-    <h2>Results</h2>
-    <table>
-      <% @top_contributors.each_with_index do |contributor, index| %>
-        <tr><td><%= contributor %></td><td><a href="/download/<%= index+1 %>/<%= contributor %>">download pdf</a></td></tr>
+  <div class="container">
+    <a href="https://github.com/bladebhs/top_contributors"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
+    <h1 class="title">Diplomas for the top three contributors</h1>
+    <form action="search">
+      <input name="repo_url" type="text" placeholder="Paste a link to the Github repository"></input>
+      <input type="submit" value="Search">
+      <% if @error %>
+        <span class="error"><%= @error %></span>
       <% end %>
-    </table>
+    </form>
 
-    <a href="/download_zip">download zip (<%= @top_contributors.size %>)</a>
-  <% end %>
+    <% if !@error && @top_contributors %>
+      <h2>Results</h2>
+      <table>
+        <% @top_contributors.each_with_index do |contributor, index| %>
+          <tr>
+            <td><%= contributor %></td>
+            <td><a href="/download/<%= index+1 %>/<%= contributor %>">download pdf</a></td>
+          </tr>
+        <% end %>
+      </table>
+
+      <a href="/download_zip">download zip (<%= @top_contributors.size %>)</a>
+    <% end %>
+  </div>
 </body>
 </html>
