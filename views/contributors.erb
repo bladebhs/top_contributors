@@ -1,0 +1,13 @@
+<% if @top_contributors %>
+  <h2>Results</h2>
+  <table>
+    <% @top_contributors.each_with_index do |contributor, index| %>
+      <tr>
+        <td><%= contributor %></td>
+        <td><a href="/download/<%= index+1 %>/<%= contributor %>">download pdf</a></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <a href="/download_zip?usernames=<%= @top_contributors.join(',') %>">download zip (<%= @top_contributors.size %>)</a>
+<% end %>

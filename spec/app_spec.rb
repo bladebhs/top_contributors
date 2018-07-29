@@ -16,19 +16,18 @@ describe 'the main page' do
     expect(page.find('button')).to have_content('Search')
   end
 
-  context 'when search for an invalid repo' do
+  context 'when search for an invalid repo', js: true do
     before do
       fill_in 'repo_url', with: invalid_repo
       click_button 'Search'
     end
 
     it 'contains an error message' do
-      expect(page).to have_selector('.error')
       expect(page).to have_content(GithubApi::INVALID_LINK_MESSAGE)
     end
   end
 
-  context 'when search for a valid repo' do
+  context 'when search for a valid repo', js: true do
     before do
       fill_in 'repo_url', with: valid_repo
       click_button 'Search'
@@ -53,7 +52,7 @@ describe 'the main page' do
 
     it 'contains a download zip link' do
       unless page.has_selector?('.error')
-        expect(page).to have_link('download zip', href: '/download_zip')
+        expect(page).to have_link('download zip', href: /\/download_zip\?usernames\=[a-z0-9\_\-,]+/)
       end
     end
   end

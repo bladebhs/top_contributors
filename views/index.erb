@@ -2,9 +2,12 @@
 <head>
   <meta charset="utf-8">
   <title>Top Contributors</title>
-  <meta name="description" content="Top Contributors">
+  <meta name="description" content="Diplomas for the top three contributors">
   <meta name="author" content="Vladislav Isakov">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/app.js"></script>
 </head>
 
 <body>
@@ -12,26 +15,14 @@
     <a href="https://github.com/bladebhs/top_contributors"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
     <h1 class="title">Diplomas for the top three contributors</h1>
     <form action="search">
-      <input name="repo_url" type="text" placeholder="Paste a link to the Github repository"></input>
-      <input type="submit" value="Search">
-      <% if @error %>
-        <span class="error"><%= @error %></span>
-      <% end %>
+      <input name="repo_url" id="repo_url" type="text" placeholder="Paste a link to the Github repository"></input>
+      <button id="search">Search</button>
+      <span id="error"></span>
     </form>
 
-    <% if !@error && @top_contributors %>
-      <h2>Results</h2>
-      <table>
-        <% @top_contributors.each_with_index do |contributor, index| %>
-          <tr>
-            <td><%= contributor %></td>
-            <td><a href="/download/<%= index+1 %>/<%= contributor %>">download pdf</a></td>
-          </tr>
-        <% end %>
-      </table>
+    <div id="contributors"></div>
 
-      <a href="/download_zip">download zip (<%= @top_contributors.size %>)</a>
-    <% end %>
+    <footer>2018 Vladislav Isakov</footer>
   </div>
 </body>
 </html>
