@@ -25,6 +25,7 @@ $(document).ready(function() {
         $("#repo_url").val("");
         
         if (xhr.responseJSON) {
+          $("#contributors").html("");
           $("#error").html(xhr.responseJSON.error);
         } else {
           $("#error").html("");
