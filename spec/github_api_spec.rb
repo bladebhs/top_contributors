@@ -4,10 +4,17 @@ describe GithubApi do
   let(:invalid_repo) { 'https://github.com/prawnpdf' }
   let(:valid_repo) { 'https://github.com/prawnpdf/prawn' }
 
+  context 'when authenticate' do
+    it 'responses with status 200' do
+      response = GithubApi::authenticate.get(GithubApi::API_ENDPOINT)
+      expect(response.code).to eq(200)
+    end
+  end
+
   context 'get contributors from a valid repo' do
     it "returns non-empty array without errors" do
       contributors, error = GithubApi::top_contributors(valid_repo)
-      # even if the repo is valid, Github may be unavailable and return an error
+      # even if the repo is valid, Github may be unavailable or return an error
       if error
         expect(contributors).to be_empty
       else  
