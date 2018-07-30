@@ -4,7 +4,7 @@
     <% @top_contributors.each_with_index do |contributor, index| %>
       <tr>
         <td><%= contributor %></td>
-        <td><a href="/download/<%= index+1 %>/<%= contributor %>">download pdf</a></td>
+        <td><a href="/download/<%= index+1 %>/<%= contributor %>" target="_blank">download pdf</a></td>
       </tr>
     <% end %>
   </table>

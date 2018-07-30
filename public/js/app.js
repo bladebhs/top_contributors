@@ -4,6 +4,8 @@ $(document)
   })
   .ajaxStop(function () {
     $("#search").html("Search");
+    $("#repo_url").val("");
+    $("#search").attr("disabled", "disabled");
   });
 
 $(document).ready(function() {
@@ -22,8 +24,6 @@ $(document).ready(function() {
     $.ajax({
       url: "search?repo_url=" + $('#repo_url').val(),
       success: function(data, status, xhr) {
-        $("#repo_url").val("");
-        
         if (xhr.responseJSON) {
           $("#contributors").html("");
           $("#error").html(xhr.responseJSON.error);
