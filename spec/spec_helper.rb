@@ -7,7 +7,7 @@ SimpleCov.start
 require 'rack/test'
 require 'rspec'
 require 'capybara/rspec'
-require 'capybara/poltergeist'
+require 'capybara/apparition'
 
 ENV['RACK_ENV'] = 'test'
 
@@ -18,7 +18,7 @@ module RSpecMixin
   def app() Sinatra::Application end
   Capybara.app = Sinatra::Application.new
   Capybara.server = :webrick
-  Capybara.javascript_driver = :poltergeist
+  Capybara.javascript_driver = :apparition
 end
 
 RSpec.configure do |config|

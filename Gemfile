@@ -1,17 +1,17 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
+gem 'sinatra', '~> 2.1'
 gem 'sinatra-contrib'
-gem 'http'
-gem 'prawn'
-gem 'rubyzip', '>= 1.0.0'
+gem 'http', '~> 5.0'
+gem 'prawn', '~> 2.4'
+gem 'rubyzip', '~> 2.3'
 
 group :test do
   gem 'rack-test'
   gem 'rspec'
   gem 'capybara'
-  gem 'poltergeist'
-  gem 'pdf-inspector', require: "pdf/inspector"
+  gem 'apparition'
+  gem 'pdf-inspector', require: 'pdf/inspector'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'rake'
